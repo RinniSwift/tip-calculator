@@ -21,25 +21,58 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uae-ci-apE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5R-oa-Xbj">
+                                        <rect key="frame" x="24" y="20" width="156.5" height="85"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" name="tcCharcoal"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEu-Nl-1Zl">
+                                        <rect key="frame" x="302" y="47" width="51" height="31"/>
+                                        <color key="onTintColor" name="tcSeafoamGreen"/>
+                                    </switch>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="tEu-Nl-1Zl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Z5R-oa-Xbj" secondAttribute="trailing" constant="20" id="JhC-N6-o8e"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z5R-oa-Xbj" secondAttribute="bottom" id="NCN-R6-Feu"/>
                                     <constraint firstAttribute="height" constant="105" id="Pyi-dZ-Elr"/>
+                                    <constraint firstItem="Z5R-oa-Xbj" firstAttribute="leading" secondItem="uae-ci-apE" secondAttribute="leading" constant="24" id="VlM-df-84M"/>
+                                    <constraint firstAttribute="trailing" secondItem="tEu-Nl-1Zl" secondAttribute="trailing" constant="24" id="gaz-Yz-ISd"/>
+                                    <constraint firstItem="tEu-Nl-1Zl" firstAttribute="centerY" secondItem="Z5R-oa-Xbj" secondAttribute="centerY" id="moQ-qS-Hc0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFY-CM-ZDq">
                                 <rect key="frame" x="15" y="129" width="345" height="203"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pp1-Sc-T9c">
                                 <rect key="frame" x="15" y="356" width="345" height="203"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftl-mQ-HdN">
                                 <rect key="frame" x="15" y="583" width="345" height="60"/>
+                                <color key="backgroundColor" name="tcDarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="e7w-bs-wWY"/>
                                 </constraints>
                                 <state key="normal" title="Calculate"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="tcOffWhite"/>
@@ -53,6 +86,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pp1-Sc-T9c" secondAttribute="trailing" constant="15" id="S6e-kQ-hJj"/>
                             <constraint firstItem="SFY-CM-ZDq" firstAttribute="top" secondItem="uae-ci-apE" secondAttribute="bottom" constant="24" id="Ulk-wl-YTg"/>
                             <constraint firstItem="uae-ci-apE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZYQ-N5-Q9i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Z5R-oa-Xbj" secondAttribute="top" id="hVg-xs-7v5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ftl-mQ-HdN" secondAttribute="bottom" constant="24" id="ioU-6M-ham"/>
                             <constraint firstItem="uae-ci-apE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jvu-d2-fMR"/>
                             <constraint firstItem="pp1-Sc-T9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ly6-Sx-v0d"/>
@@ -69,8 +103,17 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="tcCharcoal">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tcDarkBlue">
+            <color red="0.16899999976158142" green="0.17599999904632568" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="tcOffWhite">
             <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tcSeafoamGreen">
+            <color red="0.34900000691413879" green="0.85500001907348633" blue="0.64300000667572021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
