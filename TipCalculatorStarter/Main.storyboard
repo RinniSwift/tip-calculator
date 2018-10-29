@@ -112,11 +112,6 @@
                                     <constraint firstAttribute="trailing" secondItem="aTc-lg-REb" secondAttribute="trailing" constant="22" id="MBC-Q6-Ela"/>
                                     <constraint firstItem="aTc-lg-REb" firstAttribute="centerY" secondItem="SFY-CM-ZDq" secondAttribute="centerY" id="iN5-Y6-CUM"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pp1-Sc-T9c">
                                 <rect key="frame" x="15" y="356" width="345" height="203"/>
@@ -179,11 +174,6 @@
                                     <constraint firstAttribute="trailing" secondItem="ZxN-x4-AMF" secondAttribute="trailing" constant="22" id="8e6-FM-mj2"/>
                                     <constraint firstItem="ZxN-x4-AMF" firstAttribute="centerY" secondItem="pp1-Sc-T9c" secondAttribute="centerY" id="xwc-aW-7Wj"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftl-mQ-HdN">
                                 <rect key="frame" x="15" y="583" width="345" height="60"/>
@@ -199,6 +189,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKq-dA-6fx"/>
