@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var themeSwitch: UISwitch!
     
     @IBOutlet weak var inputCardView: UIView!
-    @IBOutlet weak var billAmountTextField: UITextField!
+    @IBOutlet weak var billAmountTextField: BillAmountTextField!
     @IBOutlet weak var tipPercentSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var outputCardView: UIView!
@@ -30,6 +30,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        billAmountTextField.calculateButtonAction = {
+            self.calculate()
+        }
+        
     }
     
     @IBAction func themeToggled(_ sender: UISwitch) {
@@ -45,7 +50,52 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        
+        clear()
     }
+    
+    func calculate() {
+        if self.billAmountTextField.isFirstResponder {
+            self.billAmountTextField.resignFirstResponder()
+        }
+        
+        guard let billAmountText = self.billAmountTextField.text,
+            let billAmount = Double(billAmountText) else {
+                clear()
+                return
+        }
+        
+        let roundedBillAmount = (100 * billAmount).rounded() / 100
+        
+        var tipPercent = Double()
+        switch tipPercentSegmentedControl.selectedSegmentIndex {
+        case 0:
+            tipPercent = 0.15
+        case 1:
+            tipPercent = 0.18
+        case 2:
+            tipPercent = 0.20
+        default:
+            preconditionFailure("unexpected index")
+        }
+        
+        let tipAmount = roundedBillAmount * tipPercent
+        let roundedTipAmount = (100 * tipAmount).rounded() / 100
+        
+        let totalAmount = roundedBillAmount + roundedTipAmount
+        
+        // update the UI
+        self.billAmountTextField.text = String(format: "%.2f", roundedBillAmount)
+        self.tipAmountLabel.text = String(format: "%.2f", roundedTipAmount)
+        self.totalAmountLabel.text = String(format: "%.2f", totalAmount)
+    }
+    
+    func clear() {
+        billAmountTextField.text = nil
+        tipPercentSegmentedControl.selectedSegmentIndex = 0
+        tipAmountLabel.text = "$0.00"
+        totalAmountLabel.text = "$0.00"
+    }
+    
+    
 }
 
